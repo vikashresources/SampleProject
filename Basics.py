@@ -1,6 +1,8 @@
 import sys
 import datetime
 from math import pi
+import calendar
+
 class Basic:
     def __init__(self):
         print('ooh la la, here we go...')
@@ -53,6 +55,23 @@ class Basic:
         n3 = int('%s%s%s' %(a,a,a))
         print(n1+n2+n3)
 
+    def print_date(self):
+        exam_start = (11,11,2019)
+        print("Exam date will start from: %i / %i / %i " % exam_start)
+    def get_calendar(self):
+        yy = int(input('type the year'))
+        mm = int(input('type the month'))
+        print(calendar.month(yy,mm))
+
+    def odd_product(self,numbs):
+        for i in range(1,len(numbs)):
+            for j in range(1,len(numbs)):
+                if numbs[i] != numbs[j]:
+                    product = numbs[i] * numbs[j]
+                    if product & 1:
+                        return True
+                        return False
+
 
 if __name__ == '__main__':
     b = Basic()
@@ -73,8 +92,19 @@ if __name__ == '__main__':
     b.get_ext()
     print('###...Get list color...###')
     b.get_color()
-    print('###...Get string rep of 5...###')
+    print('###...Get string form addition...###')
     b.print_int()
+    print('###...print exam start date...###')
+    b.print_date()
+    print('###...print doc string of absolute function...###')
+    print(abs.__doc__)
+    print('###...print calendar format of given month and year...###')
+    b.get_calendar()
+    print('### To check if odd product is there in list ### ')
+    dt1 = [2,4,8,12]
+    dt2 = [2,3,5,4,6]
+    print('List dt1 has odd product: ', b.odd_product(dt1))
+    print('List dt2 has odd product: ', b.odd_product(dt2))
 
 
 
