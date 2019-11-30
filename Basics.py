@@ -2,7 +2,7 @@ import sys
 import datetime
 from math import pi
 import calendar
-
+import os
 class Basic:
     def __init__(self):
         print('ooh la la, here we go...')
@@ -72,6 +72,29 @@ class Basic:
                         return True
                         return False
 
+    def sum_of_cubes(self,num):
+        sum = 0
+        n = 1
+        while n < num:
+            sum = n*n*n
+            n += 1
+        return sum
+
+    def min_max(self,data):
+        l = data[0]
+        s = data[0]
+        for num in data:
+            if num > l:
+                l = num
+            elif num < s:
+                s = num
+        return l,s
+
+    def multiple(self,m,n):
+        return True if m % n == 0 else False
+
+
+
 
 if __name__ == '__main__':
     b = Basic()
@@ -105,9 +128,18 @@ if __name__ == '__main__':
     dt2 = [2,3,5,4,6]
     print('List dt1 has odd product: ', b.odd_product(dt1))
     print('List dt2 has odd product: ', b.odd_product(dt2))
-
-
-
+    print('### sum of cubes ###')
+    print(b.sum_of_cubes(8))
+    print('###  largest and smallest ###')
+    print(b.min_max(dt1))
+    print(b.multiple(9,3))
+    print(b.multiple(9, 4))
+    print(sys.modules)
+    print(sys.path)
+    print(os.path)
+    print(isinstance(25,int) or isinstance(25,str) )
+    print(isinstance([25],int) or isinstance([25],str))
+    print(isinstance("25",int) or isinstance("25",str))
 
 
 
