@@ -100,7 +100,7 @@ if __name__ == '__main__':
     print(abs.__doc__)
     print('###...print calendar format of given month and year...###')
     b.get_calendar()
-    print('### To check if odd product is there in list ### ')
+    print('###To check if odd product is there in list### ')
     dt1 = [2,4,8,12]
     dt2 = [2,3,5,4,6]
     print('List dt1 has odd product: ', b.odd_product(dt1))
