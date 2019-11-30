@@ -29,6 +29,31 @@ class Basic:
         lname = input('Enter last name: ')
         print('Hello ' + lname + ' ' + fname)
 
+    def convert_CSV(self):
+        csv = input("Enter some comma apart values: ")
+        lst = csv.split(',')
+        tple = tuple(lst)
+        print('List : ', lst)
+        print('Tuple: ', tple)
+
+    def get_ext(self):
+        filename = 'demo.python'
+        ext = filename.split('.')
+        print('Ext. of file is ' + repr(ext[-1]))
+
+    def get_color(self):
+        color_list = ['RED','GREEN','BLACK','YELLOW']
+        print('First color ', color_list[0])
+        print('Last color ',color_list[3])
+
+    def print_int(self):
+        a = 5
+        n1 = int('%s' % a)
+        n2 = int('%s%s' % (a,a))
+        n3 = int('%s%s%s' %(a,a,a))
+        print(n1+n2+n3)
+
+
 if __name__ == '__main__':
     b = Basic()
     print('###...print twinkle twinkle start...###')
@@ -42,6 +67,16 @@ if __name__ == '__main__':
     b.calc_area(rad)
     print('###...reverse last name and first name...###')
     b.reverse_name()
+    print('###...Convert CSV into list and tupples...###')
+    b.convert_CSV()
+    print('###...Get file ext...###')
+    b.get_ext()
+    print('###...Get list color...###')
+    b.get_color()
+    print('###...Get string rep of 5...###')
+    b.print_int()
+
+
 
 
 
