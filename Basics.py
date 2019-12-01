@@ -3,6 +3,7 @@ import datetime
 from math import pi
 import calendar
 import os
+import socket
 class Basic:
     def __init__(self):
         print('ooh la la, here we go...')
@@ -93,6 +94,13 @@ class Basic:
     def multiple(self,m,n):
         return True if m % n == 0 else False
 
+    def validate_ip_address(self):
+        ip = '192.168.0.109'
+        try:
+            socket.inet_aton(ip)
+            print('valid ip')
+        except socket.error:
+            print('invalid ip')
 
 
 
@@ -140,6 +148,8 @@ if __name__ == '__main__':
     print(isinstance(25,int) or isinstance(25,str) )
     print(isinstance([25],int) or isinstance([25],str))
     print(isinstance("25",int) or isinstance("25",str))
+    print('###  validating ip address ###')
+    b.validate_ip_address()
 
 
 
