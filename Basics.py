@@ -11,6 +11,9 @@ from inspect import getmodule
 from math import sqrt
 import collections
 import functools
+import operator
+import glob
+
 class Basic:
     def __init__(self):
         print('ooh la la, here we go...')
@@ -125,6 +128,15 @@ class Basic:
             print(i)
         print(default_timer()-start)
 
+    def is_num(self):
+        while True:
+            try:
+                int(input('Enter a number'))
+                break
+            except ValueError:
+                print('Is not a number, try again...')
+                print()
+
 
 
 
@@ -216,7 +228,20 @@ if __name__ == '__main__':
     print('The total order amount comes to %.2f' % order_amt)
     print()
     print(functools.reduce(lambda a, b: a+b, num))
-    import operator
     print(functools.reduce(operator.mul, num))
+    nums = [34, 1, 0, -23]
+    print("Original numbers in the list: ", nums)
+    new_nums = list(filter(lambda x: x > 0, nums))
+    print("Positive numbers in the list: ", new_nums)
+    b.is_num()
+    color = ["Red", "Black", "Green", "White", "Orange"]
+    print("\nOriginal Color: ", color)
+    del color[0]
+    print("After removing the first color: ", color)
+    print()
+
+    file_list = glob.glob('*.*')
+    print(file_list)
+
 
 
