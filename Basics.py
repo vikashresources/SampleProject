@@ -5,6 +5,12 @@ import calendar
 import os, platform
 import socket
 import struct
+from timeit import default_timer
+import json
+from inspect import getmodule
+from math import sqrt
+import collections
+import functools
 class Basic:
     def __init__(self):
         print('ooh la la, here we go...')
@@ -113,6 +119,12 @@ class Basic:
         else:
             print('Neither a list, set or tuple')
 
+    def timer(self,n):
+        start = default_timer()
+        for i in range(n):
+            print(i)
+        print(default_timer()-start)
+
 
 
 
@@ -187,7 +199,24 @@ if __name__ == '__main__':
     print('### use of map ###')
     print('type value of x & y')
     print(list(map(int, input().split())))
-
-
+    b.timer(20)
+    print(json.dumps({'Alex' : 1, 'Hari': 2,'Agi': 3}))
+    print(getmodule(sqrt))
+    num = [2, 2, 4, 6, 6, 8, 6, 10, 4]
+    print(sum(collections.Counter(num).values()))
+    print(sys.int_info)
+    print(sys.float_info)
+    print(sys.maxsize)
+    str_num = "1234567890"
+    print()
+    print('%.6s' % str_num)
+    print()
+    order_amt = 212.374
+    print('\nThe total order amount comes to %f' % order_amt)
+    print('The total order amount comes to %.2f' % order_amt)
+    print()
+    print(functools.reduce(lambda a, b: a+b, num))
+    import operator
+    print(functools.reduce(operator.mul, num))
 
 
