@@ -1,0 +1,28 @@
+import numpy as np
+import pandas as pd
+import matplotlib
+
+df = pd.read_csv("PastHires.csv")
+print('####.....####')
+print(df.head())
+print('####.....####')
+print(df.tail())
+print('####.....####')
+print(df.shape)
+print('####.....####')
+print(df.size)
+print('####.....####')
+print(len(df))
+print('####.....####')
+print(df.columns)
+print('####.....####')
+print(df['Hired'])
+print(df['Hired'][:5])
+print(df['Hired'][5])
+print('####.....####')
+print(df[['Hired', 'Years Experience']])
+print('####.....####')
+print(df.sort_values(['Years Experience']))
+print('####.....####')
+print(df['Level of Education'].value_counts())
+#df['Level of Education'].plot(kind='bar')
