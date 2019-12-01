@@ -2,8 +2,9 @@ import sys
 import datetime
 from math import pi
 import calendar
-import os
+import os, platform
 import socket
+import struct
 class Basic:
     def __init__(self):
         print('ooh la la, here we go...')
@@ -102,6 +103,17 @@ class Basic:
         except socket.error:
             print('invalid ip')
 
+    def check_type(self,data):
+        if type(data) is list:
+            print('list...')
+        elif type(data) is set:
+            print('set...')
+        elif type(data) is tuple:
+            print('tuple...')
+        else:
+            print('Neither a list, set or tuple')
+
+
 
 
 if __name__ == '__main__':
@@ -150,7 +162,31 @@ if __name__ == '__main__':
     print(isinstance("25",int) or isinstance("25",str))
     print('###  validating ip address ###')
     b.validate_ip_address()
-
+    print('###  validating type of list ###')
+    data = [1,2,3]
+    b.check_type(data)
+    data = (1,2,3)
+    b.check_type(data)
+    data = {1,2,4}
+    b.check_type(data)
+    print('###  system details ###')
+    print(os.name)
+    print(platform.system())
+    print(platform.release())
+    print(struct.calcsize("P") * 8)
+    print('###  convert decimal to hexadecimal ###')
+    print(format(30, '02x'))
+    print(format(12, '08b'))
+    print(format(12, '010b'))
+    d = {'RED': 'GREEN'}
+    (c1, c2), = d.items()
+    print(c1)
+    print(c2)
+    x = 30
+    print('value of x is "{}"'.format(x))
+    print('### use of map ###')
+    print('type value of x & y')
+    print(list(map(int, input().split())))
 
 
 
