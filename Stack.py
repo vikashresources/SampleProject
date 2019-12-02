@@ -1,6 +1,7 @@
 from typing import List, Any
 
 
+# Stack data structure
 class Stack():
     items: List[Any]
 
