@@ -43,7 +43,7 @@ def is_parenthesis_balanced(pattern_string):
                     is_balanced = False
     index += 1
 
-    if s.empty() and is_balanced():
+    if s.empty() and is_balanced:
         return True
     else:
         return False
