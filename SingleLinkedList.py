@@ -30,10 +30,21 @@ class SingleLinkedList:
         new_node.next = self.head
         self.head = new_node
 
+    def insert_after_node(self, prev_node, data):
+        if not prev_node:
+            print('Previous node is not in the list')
+            return
+        new_node = Node(data)
+        new_node.next = prev_node.next
+        prev_node.next = new_node
+
 
 llist = SingleLinkedList()
 llist.append('A')
 llist.append('B')
 llist.append('C')
+llist.print_list()
 llist.prepend('D')
+llist.print_list()
+llist.insert_after_node(llist.head.next, 'G')
 llist.print_list()
