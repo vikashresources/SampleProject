@@ -25,8 +25,15 @@ class SingleLinkedList:
             print(curr_node.data)
             curr_node = curr_node.next
 
+    def prepend(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
 
 llist = SingleLinkedList()
 llist.append('A')
 llist.append('B')
+llist.append('C')
+llist.prepend('D')
 llist.print_list()
