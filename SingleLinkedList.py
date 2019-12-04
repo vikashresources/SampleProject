@@ -5,6 +5,28 @@ class Node:
 
 
 class SingleLinkedList:
-    def __init__(self):
-        pass
+    def __init__(self) -> object:
+        self.head = None
 
+    def append(self, data):
+        new_node = Node(data)
+
+        if self.head is None:
+            self.head = new_node
+            return
+        last_node = self.head
+        while last_node.next:
+            last_node = last_node.next
+        last_node.next = new_node
+
+    def print_list(self):
+        curr_node = self.head
+        while curr_node:
+            print(curr_node.data)
+            curr_node = curr_node.next
+
+
+llist = SingleLinkedList()
+llist.append('A')
+llist.append('B')
+llist.print_list()
